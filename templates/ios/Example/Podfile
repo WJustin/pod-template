@@ -7,7 +7,6 @@ target '${POD_NAME}_Example' do
 
   target '${POD_NAME}_Tests' do
     inherit! :search_paths
-
-    ${INCLUDED_PODS}
+    pod 'SDWebImage', '5.12.1'
   end
 end
