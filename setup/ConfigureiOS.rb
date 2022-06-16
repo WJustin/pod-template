@@ -13,8 +13,8 @@ module Pod
 
     def perform
 
-      keep_demo = configurator.ask_with_answers("Would you like to include a demo application with your library", ["Yes", "No"]).to_sym
-
+      #keep_demo = configurator.ask_with_answers("Would you like to include a demo application with your library", ["Yes", "No"]).to_sym
+      keep_demo = "No"
       framework = "None"
       case framework
         when :specta
@@ -35,7 +35,8 @@ module Pod
           configurator.set_test_framework("xctest", "m", "ios")
       end
 
-      snapshots = configurator.ask_with_answers("Would you like to do view based testing", ["Yes", "No"]).to_sym
+      #snapshots = configurator.ask_with_answers("Would you like to do view based testing", ["Yes", "No"]).to_sym
+      snapshots = "No"
       case snapshots
         when :yes
           configurator.add_pod_to_podfile "FBSnapshotTestCase"
